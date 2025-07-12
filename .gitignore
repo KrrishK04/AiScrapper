@@ -130,6 +130,9 @@ cython_debug/
 
 # Output directory
 output/
+logs/
 
 # Sensitive files
 config.py 
+talk.md
+test.py

@@ -32,10 +32,11 @@ def main():
     # --- Configuration ---
     # The URL of the website the agent should start on.
     # TODO: REPLACE WITH A REAL TARGET URL from your urls.xlsx file.
-    target_url = "https://www.sme.in/Home/Index.htm" 
+    # target_url = "https://www.sme.in/Home/Index.htm" 
+    target_url = "https://egov.gidcgujarat.org/GIDC_PAYMENT/Index.aspx" 
 
     # The high-level goal for the agent.
-    goal = "Find the business or company directory on this website, navigate through it, and extract details of all companies listed, including their name, address, and any other available information."
+    goal = "Find the businesses or company directories on this website, navigate through it, and extract details of all companies listed, including their name, address, and any other available information."
 
     # --- WebDriver Setup ---
     print("[MAIN] > Setting up Selenium WebDriver...")
@@ -64,7 +65,8 @@ def main():
         )
         
         # Start the agent's run loop
-        agent.run()
+        import asyncio
+        asyncio.run(agent.run())
 
     except Exception as e:
         print(f"[MAIN] > An error occurred during the agent's run: {e}")
